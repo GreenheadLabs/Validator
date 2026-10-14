@@ -1,0 +1,61 @@
+# Greenhead public XRPL validator — rippled.cfg template
+#
+# Commented template only. Not a live config. The Linux host has not arrived.
+# Copy this file on the host when it does. Never commit the filled copy:
+# it will contain the validator token.
+#
+# Admin and RPC listen on localhost only. Do not publish them.
+# Do not add a public WebSocket or other public admin port.
+# Peer port is 51235.
+
+[server]
+port_rpc_admin_local
+port_ws_admin_local
+port_peer
+
+# JSON-RPC admin API. Localhost only.
+[port_rpc_admin_local]
+port = 5005
+ip = 127.0.0.1
+admin = 127.0.0.1
+protocol = http
+
+# Admin WebSocket. Localhost only. Not a public API.
+[port_ws_admin_local]
+port = 6006
+ip = 127.0.0.1
+admin = 127.0.0.1
+protocol = ws
+
+# Peer protocol. 51235 is the long-standing XRPL peer port.
+# If another admin interface is added later (including gRPC), bind it
+# to 127.0.0.1 as well.
+[port_peer]
+port = 51235
+ip = 0.0.0.0
+protocol = peer
+
+# Ledger database. Lives on the host. Never commit the database.
+# Adjust the path on the host if the package default differs.
+[node_db]
+type=NuDB
+path=/var/lib/rippled/db/nudb
+
+[database_path]
+/var/lib/rippled/db
+
+# Debug log. On the host. Never commit the log.
+[debug_logfile]
+/var/log/rippled/debug.log
+
+# Trusted validator list. See validators.txt.example. The list itself
+# is chosen when the host arrives.
+[validators_file]
+validators.txt
+
+# Validator token.
+# The real token is created on the host (validator-keys create_token)
+# and installed only in the host's rippled.cfg. It is never committed.
+# Leave this section empty in git.
+# Do not put a validator seed or [validation_seed] in this file.
+[validator_token]

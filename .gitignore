@@ -1,0 +1,38 @@
+# Live rippled / xrpld config. The copy on the host holds the validator token.
+rippled.cfg
+xrpld.cfg
+**/rippled.cfg
+**/xrpld.cfg
+
+# Trusted validator list chosen on the host.
+validators.txt
+**/validators.txt
+
+# Validator keys, token, and manifest private material.
+validator-keys.json
+**/validator-keys.json
+*validator*token*
+*.token
+*.seed
+
+# Key and wallet files.
+*.key
+*.pem
+wallet.db
+*.wallet
+
+# Node database and debug logs.
+*.log
+debug.log
+nudb/
+rocksdb/
+node_db/
+**/db/nudb/
+**/rippled/db/
+
+# Local secret env files.
+.env
+.env.*
+*.env
+secrets.env
+*.secret
