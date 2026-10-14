@@ -1,0 +1,30 @@
+# Greenhead public XRPL validator — xrp-ledger.toml template
+#
+# Not published. The domain is not live yet.
+# When DNS and HTTPS exist, serve this file at exactly:
+#
+#   https://validator.greenhead.io/.well-known/xrp-ledger.toml
+#
+# Domain: validator.greenhead.io
+# Clients take the domain from that URL. The validator manifest must
+# name the same domain, and the public_key below must be the master
+# public key in that manifest. Replace the placeholder before publishing.
+# Generate the attestation on the host during domain verification.
+# Do not publish the validator's IP address in this file.
+# Do not invent contact details; fill them in when they are real.
+
+[METADATA]
+modified = 2026-10-14T00:00:00.000Z
+
+[[VALIDATORS]]
+# Must match the public key in the validator manifest.
+public_key = "nH_PLACEHOLDER_REPLACE_WITH_MANIFEST_PUBLIC_KEY"
+network = "main"
+# attestation = ""
+# owner_country, server_country, server_location, server_cloud,
+# and network_asn are filled in after the host is known.
+
+[[PRINCIPALS]]
+name = "Greenhead"
+# email = ""
+# social_1 = ""

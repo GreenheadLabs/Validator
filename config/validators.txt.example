@@ -1,0 +1,19 @@
+# Greenhead public XRPL validator — validators.txt placeholder
+#
+# The node still needs a trusted validator list before it can sync.
+# That list is chosen when the Linux host arrives. This file is not that list.
+#
+# Do not paste a third-party UNL here. On the host, put the chosen
+# list in the live validators.txt next to rippled.cfg.
+#
+# Sections the live file will use, left empty on purpose:
+#
+# [validator_list_sites]
+# One HTTPS URL per line, for a publisher you decide to trust.
+#
+# [validator_list_keys]
+# The publisher public key that signs that list, one per line.
+#
+# [validators]
+# Individual validator public keys, only if you are listing them
+# yourself. One key per line. Not a copied UNL.
